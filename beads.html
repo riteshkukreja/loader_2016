@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Loader</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+		html,body { margin: 0; padding: 0; }
+		body { background: #111; }
+		.pageloader {  
+			width: 300px; 
+			height: 300px; 
+			position: absolute; 
+			top: calc(50% - 150px);
+			left: calc(50% - 150px);
+		}
+		.pageloader > span {
+			display: block;
+			color: #FFF;
+			font-size: 200%;
+			text-align: center;
+			width: 100%;
+			font-family: "Roboto Condensed";
+		}
+		.pageloader .loader-default {
+			width: 200px;
+			height: 200px;
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			text-align: center;
+		}
+		.pageloader .loader-default > span {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			top: 50%;
+		}
+		@keyframes pop {
+			100% { top: 40%; }
+		}
+		span.red { background: red; left: calc(50% - 55px); animation: pop 200ms ease-out alternate infinite; animation-delay: 0s; }
+		span.blue { background: blue; left: calc(50% - 25px); animation: pop 200ms ease-out alternate infinite; animation-delay: 200ms; }
+		span.green { background: green; left: calc(50% + 15px); animation: pop 200ms ease-out alternate infinite; animation-delay: 400ms; }
+		span.yellow { background: yellow; left: calc(50% + 45px); animation: pop 200ms ease-out alternate infinite; animation-delay: 600ms; }
+	</style>
+</head>
+<body>
+
+	<div class="pageloader">
+		<div class="loader-default">
+			<span class="red"></span>
+			<span class="green"></span>
+			<span class="blue"></span>
+			<span class="yellow"></span>
+		</div>
+		<span>Loading</span>
+	</div>
+
+</body>
+</html>
