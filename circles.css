@@ -1,0 +1,108 @@
+body, html {
+	margin: 0;
+}
+
+body {
+	background: #AAA;
+	color: #333;
+
+}
+
+.circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+	border: 0;
+	background-color: #111;
+
+	transition: all 200ms linear;
+}
+
+.red {
+	background: rgba(240, 20, 20, .9);
+	/*border: 1px solid #CCC;*/
+}
+
+.blue {
+	background: rgba(20, 20, 240, .9);
+	/*border: 1px solid #CCC;*/
+}
+
+.yellow {
+	background-color: yellow;
+	/*border: 1px solid #CCC;*/
+}
+
+.green {
+	background: rgba(20, 200, 20, .9);
+	/*border: 1px solid #CCC;*/
+}
+
+.top-left {
+	top: calc(50% - 100px - 20px);
+	left: calc(50% - 100px - 20px);
+
+	animation: chromify_red 1s alternate infinite;
+}
+
+.top-right {
+	top: calc(50% - 100px - 20px);
+	right: calc(50% - 100px - 20px);
+
+	animation: chromify_blue 2s alternate infinite;
+}
+
+.bottom-left {
+	bottom: calc(50% - 100px - 20px);
+	left: calc(50% - 100px - 20px);
+
+	animation: chromify_green 2s alternate infinite;
+}
+
+.bottom-right {
+	bottom: calc(50% - 100px - 20px);
+	right: calc(50% - 100px - 20px);
+
+	animation: chromify_yellow 1s alternate infinite;
+}
+
+@keyframes chromify_red {
+	50% {
+		transform: translateX(100px) translateY(100px) scale(1.2);
+	}
+	100% {
+		transform: rotateZ(10deg) scale(0.8);
+	}
+}
+
+@keyframes chromify_blue {
+	50% {
+		transform: translateX(-100px) translateY(100px) scale(1.2);
+	}
+	100% {
+		transform: rotateZ(10deg) scale(0.8);
+	}
+}
+
+@keyframes chromify_green {
+	50% {
+		transform: translateX(100px) translateY(-100px) scale(1.2);
+	}
+	100% {
+		transform: rotateZ(10deg) scale(0.8);
+	}
+}
+
+@keyframes chromify_yellow {
+	50% {
+		transform: translateX(-100px) translateY(-100px) scale(1.2);
+	}
+	100% {
+		transform: rotateZ(10deg) scale(0.8);
+	}
+}
