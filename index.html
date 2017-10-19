@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chrome Loader</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Loaders 2016</title>
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+		body {
+			background: #111;
+			margin: 0;
+			font-family: "Roboto Condensed";
+		}
+
+		h1 {
+			display: block;
+			color: #FFF;
+			text-align: center;
+			width: 100%;
+		}
+
+		div.loaders {
+			width: 100%;
+			text-align: center;
+		}
+
+		div.loaders > span {
+			display: inline-block;
+			padding: 10px;
+			color: #aaa;
+		}
+
+		div.loaders span:hover, div.loaders span.selected {
+			background: #C67;
+			color: #EEE;
+			cursor: pointer;
+		}
+
+		iframe {
+			width: 80%;
+			margin: 0 auto;
+			margin-left: 10%;
+			height: calc(100vh - 200px);
+			margin-top: 20px;
+			border: 0;
+		}
+	</style>
 </head>
 <body>
 
-	<div>
-		<span class='circle red top-left'></span>
-		<span class='circle blue top-right'></span>
-		<span class='circle green bottom-left'></span>
-		<span class='circle yellow bottom-right'></span>
+	<h1>Loaders 2016</h1>
+	<div class="loaders">
+		<span onclick="load('android.html', this)" class="selected">Android</span>
+		<span onclick="load('beads.html', this)">Beads</span>
+		<span onclick="load('chrome.html', this)">Chrome</span>
+		<span onclick="load('colors_slide.html', this)">Color-Slide</span>
+		<span onclick="load('sphere.html', this)">Sphere</span>
 	</div>
+
+	<iframe></iframe>
+
+	<script type="text/javascript">
+		var iframe = document.querySelector("iframe");
+
+		function load(loader, self) {
+			// select clicked
+			var selectedElements = document.getElementsByClassName("selected");
+			selectedElements[0].classList.remove("selected");
+			self.classList.add("selected");
+			show(loader);
+		}
+
+		function show(loader) {
+			iframe.src = loader;
+		}
+
+		show('android.html');
+	</script>
 
 </body>
 </html>
